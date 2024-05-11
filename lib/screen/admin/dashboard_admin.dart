@@ -36,7 +36,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                 child: TextField(
                   controller: _searchController,
                   decoration: InputDecoration(
-                    hintText: 'Search...',
+                    hintText: 'Cari...',
                     border: InputBorder.none,
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
