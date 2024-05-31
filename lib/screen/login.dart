@@ -1,8 +1,22 @@
+import 'package:ecommerce_penjualan_bakso/event/event_db.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_penjualan_bakso/config/asset.dart';
 import 'package:ecommerce_penjualan_bakso/screen/admin/dashboard_admin.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  const Login({super.key});
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  var _controllerUsername = TextEditingController();
+  var _controllerPass = TextEditingController();
+  var _formKey = GlobalKey<FormState>();
+
+  bool _isHidden = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,6 +64,7 @@ class Login extends StatelessWidget {
                     height: 10,
                   ),
                   Form(
+                    key: _formKey,
                     child: Padding(
                       padding: EdgeInsets.all(20),
                       child: Column(
@@ -57,6 +72,7 @@ class Login extends StatelessWidget {
                           TextFormField(
                             validator: (value) =>
                                 value == '' ? 'Jangan Kosong' : null,
+                            controller: _controllerUsername,
                             style: TextStyle(
                               color: Asset.colorPrimaryDark,
                             ),
@@ -103,6 +119,7 @@ class Login extends StatelessWidget {
                           TextFormField(
                             validator: (value) =>
                                 value == '' ? 'Jangan Kosong' : null,
+                            controller: _controllerPass,
                             style: TextStyle(
                               color: Asset.colorPrimaryDark,
                             ),
@@ -155,13 +172,12 @@ class Login extends StatelessWidget {
                             width: double.infinity,
                             child: InkWell(
                               onTap: () {
-                                // Navigasi ke halaman dashboard admin ketika tombol login diklik
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => DashboardAdmin(),
-                                  ),
-                                );
+                                if (_formKey.currentState!.validate()) {
+                                  EventDb.login(_controllerUsername.text,
+                                      _controllerPass.text);
+                                  _controllerUsername.clear();
+                                  _controllerPass.clear();
+                                }
                               },
                               borderRadius: BorderRadius.circular(10),
                               child: Padding(

@@ -28,7 +28,9 @@ class _DashboardAdminState extends State<DashboardAdmin> {
         title: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0),
-            color: Color.fromARGB(255, 216, 216, 216),
+            color: Color.fromRGBO(235, 234, 234, 0.475), // Warna abu transparan
+            border: Border.all(
+                color: Color.fromARGB(109, 3, 124, 237)), // Stroke abu
           ),
           child: Row(
             children: [
@@ -36,14 +38,13 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                 child: TextField(
                   controller: _searchController,
                   decoration: InputDecoration(
-                    hintText: 'Cari...',
+                    hintText: 'Search...',
                     border: InputBorder.none,
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
                     prefixIcon: Padding(
-                      padding: EdgeInsets.only(
-                          left: 8.0, right: 8.0), // Atur padding ikon
-                      child: Icon(Icons.search), // Menggunakan ikon pencarian
+                      padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                      child: Icon(Icons.search),
                     ),
                   ),
                   onChanged: (value) {
@@ -53,14 +54,6 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                   },
                 ),
               ),
-              // IconButton(
-              //   icon: Icon(Icons.search),
-              //   onPressed: () {
-              //     setState(() {
-              //       _searchQuery = _searchController.text;
-              //     });
-              //   },
-              // ),
             ],
           ),
         ),

@@ -63,9 +63,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton('Favorite', Icons.volunteer_activism_sharp, 0),
-                    IconButton('Diskon', Icons.percent, 0),
-                    IconButton('Voucher', Icons.discount, 0),
+                    IconButton('Makanan', Icons.food_bank, 0),
                     IconButton('Minuman', Icons.coffee_rounded, 0),
+                    IconButton('Cemilan', Icons.bubble_chart, 0),
                   ],
                 ),
                 SizedBox(
@@ -74,8 +74,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton('Makanan', Icons.food_bank, 0),
-                    IconButton('Cemilan', Icons.bubble_chart, 0),
+                    IconButton('Voucher', Icons.discount, 0),
+                    IconButton('Diskon', Icons.percent, 0),
                     IconButton('Murah', Icons.card_giftcard, 0),
                     IconButton('Semua', Icons.now_widgets_outlined, 0),
                   ],
@@ -89,8 +89,8 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 10,
               ),
-              Text("Daftar Menu",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              Text(" Daftar Menu",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(
                 height: 10,
               ),
@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image.asset(
-                            'asset/images/mieAyam.jpg',
+                            'asset/images/mieAyamBakso.jpeg',
                             height: 100,
                             width: 175,
                             fit: BoxFit.cover,
@@ -118,17 +118,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 2.0,
                           ),
                           Text(
-                            ' Mie Ayam',
+                            ' Mie Ayam + Bakso',
                             style: TextStyle(
-                              fontSize: 18.0,
+                              fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           SizedBox(height: 0),
                           Text(
-                            ' Harga: Rp. 10.000',
+                            ' Harga: Rp. 20.000',
                             style: TextStyle(
-                              fontSize: 16.0,
+                              fontSize: 14.0,
                             ),
                           ),
                         ],
@@ -162,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             ' Bakso Telor',
                             style: TextStyle(
-                              fontSize: 18.0,
+                              fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -170,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             ' Harga: Rp. 15.000',
                             style: TextStyle(
-                              fontSize: 16.0,
+                              fontSize: 14.0,
                             ),
                           ),
                         ],
@@ -197,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image.asset(
-                            'asset/images/mieBakso.jpg',
+                            'asset/images/mieAyam.jpg',
                             height: 100,
                             width: 175,
                             fit: BoxFit.cover,
@@ -206,17 +206,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 2.0,
                           ),
                           Text(
-                            ' Mie + Bakso',
+                            ' Mie Ayam',
                             style: TextStyle(
-                              fontSize: 18.0,
+                              fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           SizedBox(height: 0),
                           Text(
-                            ' Harga: Rp. 15.000',
+                            ' Harga: Rp. 10.000',
                             style: TextStyle(
-                              fontSize: 16.0,
+                              fontSize: 14.0,
                             ),
                           ),
                         ],
@@ -250,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             ' Bakso Urat',
                             style: TextStyle(
-                              fontSize: 18.0,
+                              fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -258,7 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             ' Harga: Rp. 10.000',
                             style: TextStyle(
-                              fontSize: 16.0,
+                              fontSize: 14.0,
                             ),
                           ),
                         ],
@@ -285,7 +285,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image.asset(
-                            'asset/images/esTea.jpg',
+                            'asset/images/baksoKerikil.jpg',
                             height: 100,
                             width: 175,
                             fit: BoxFit.cover,
@@ -294,17 +294,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 2.0,
                           ),
                           Text(
-                            ' Es Tea',
+                            ' Bakso Kerikil',
                             style: TextStyle(
-                              fontSize: 18.0,
+                              fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           SizedBox(height: 0),
                           Text(
-                            ' Harga: Rp. 5.000',
+                            ' Harga: Rp. 12.000',
                             style: TextStyle(
-                              fontSize: 16.0,
+                              fontSize: 14.0,
                             ),
                           ),
                         ],
@@ -327,7 +327,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image.asset(
-                            'asset/images/esJeruk.jpg',
+                            'asset/images/baksoMercon.jpeg',
                             height: 100,
                             width: 172,
                             fit: BoxFit.cover,
@@ -336,17 +336,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 2.0,
                           ),
                           Text(
-                            ' Nasi Goreng',
+                            ' Bakso Mercon',
                             style: TextStyle(
-                              fontSize: 18.0,
+                              fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           SizedBox(height: 0),
                           Text(
-                            ' Harga: Rp. 25.000',
+                            ' Harga: Rp. 20.000',
                             style: TextStyle(
-                              fontSize: 16.0,
+                              fontSize: 14.0,
                             ),
                           ),
                         ],
@@ -448,16 +448,12 @@ class IconButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            // margin: EdgeInsets.only(bottom: 5),
             child: Material(
-              borderRadius: BorderRadius.all(
-                Radius.circular(40),
-              ),
-              color: Colors.transparent,
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+              elevation: 3,
               child: InkWell(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(40),
-                ),
+                borderRadius: BorderRadius.circular(10),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -467,24 +463,17 @@ class IconButton extends StatelessWidget {
                   );
                 },
                 child: Container(
-                  // margin: EdgeInsets.all(5),
                   height: 60,
                   width: 60,
                   decoration: BoxDecoration(
-                    color: Asset.colorPrimary,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30),
-                    ),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.grey),
                   ),
                   child: Center(
-                    child: Stack(
-                      children: [
-                        Icon(
-                          iconLabel,
-                          color: Colors.white,
-                          size: 40,
-                        ),
-                      ],
+                    child: Icon(
+                      iconLabel,
+                      color: Asset.colorPrimary, // Warna biru
+                      size: 40,
                     ),
                   ),
                 ),
