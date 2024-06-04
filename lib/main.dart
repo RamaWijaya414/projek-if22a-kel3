@@ -1,3 +1,5 @@
+import 'package:ecommerce_penjualan_bakso/event/event_pref.dart';
+import 'package:ecommerce_penjualan_bakso/model/user.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce_penjualan_bakso/config/asset.dart';
@@ -19,7 +21,16 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: FutureBuilder(
+        future: EventPref.getUser(),
+        builder: (context, AsyncSnapshot<User?> snapshot) {
+          return snapshot.data == null
+              ? Login()
+              : snapshot.data!.role == 'Admin'
+                  ? DashboardAdmin()
+                  : DashboardAdmin();
+        },
+      ),
     );
   }
 }

@@ -1,6 +1,11 @@
+import 'package:ecommerce_penjualan_bakso/screen/admin/account_screen.dart';
+import 'package:ecommerce_penjualan_bakso/screen/admin/newmenu_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_penjualan_bakso/config/asset.dart';
 import 'package:ecommerce_penjualan_bakso/screen/admin/home_screen.dart';
+import 'package:ecommerce_penjualan_bakso/screen/user/notifikasi.dart';
+import 'package:ecommerce_penjualan_bakso/cart.dart';
+import 'package:ecommerce_penjualan_bakso/screen/user/notifikasi.dart';
 
 class DashboardAdmin extends StatefulWidget {
   const DashboardAdmin({Key? key}) : super(key: key);
@@ -10,52 +15,32 @@ class DashboardAdmin extends StatefulWidget {
 }
 
 class _DashboardAdminState extends State<DashboardAdmin> {
-  TextEditingController _searchController = TextEditingController();
-  String _searchQuery = '';
-
   int _selectedIndex = 0;
+  String _title = 'Home';
 
-  List<Widget> _widgetOptions = <Widget>[
+  final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
+    NotifikasiAdmin(),
+    AddMenuPage(),
+    AccountScreen(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    _title = 'Home';
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Asset.colorPrimary, // Warna AppBar
         automaticallyImplyLeading: false,
-        title: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.0),
-            color: Color.fromRGBO(235, 234, 234, 0.475), // Warna abu transparan
-            border: Border.all(
-                color: Color.fromARGB(109, 3, 124, 237)), // Stroke abu
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  controller: _searchController,
-                  decoration: InputDecoration(
-                    hintText: 'Search...',
-                    border: InputBorder.none,
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-                    prefixIcon: Padding(
-                      padding: EdgeInsets.only(left: 8.0, right: 8.0),
-                      child: Icon(Icons.search),
-                    ),
-                  ),
-                  onChanged: (value) {
-                    setState(() {
-                      _searchQuery = value;
-                    });
-                  },
-                ),
-              ),
-            ],
-          ),
+        title: Text(
+          _title,
+          style: TextStyle(color: Colors.white), // Warna teks putih
         ),
       ),
       bottomNavigationBar: ClipRRect(
@@ -80,8 +65,8 @@ class _DashboardAdminState extends State<DashboardAdmin> {
               icon: Icon(Icons.notifications),
             ),
             BottomNavigationBarItem(
-              label: "Keranjang",
-              icon: Icon(Icons.trolley),
+              label: "Add",
+              icon: Icon(Icons.add_shopping_cart),
             ),
             BottomNavigationBarItem(
               label: "Akun",
@@ -97,6 +82,20 @@ class _DashboardAdminState extends State<DashboardAdmin> {
   void onTabTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      switch (index) {
+        case 0:
+          _title = 'Home';
+          break;
+        case 1:
+          _title = 'Notifikasi';
+          break;
+        case 2:
+          _title = 'Add';
+          break;
+        case 3:
+          _title = 'Account';
+          break;
+      }
     });
   }
 }
