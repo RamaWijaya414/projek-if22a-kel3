@@ -1,0 +1,1 @@
+ D:\\projek-if22a-kel3\\.dart_tool\\flutter_build\\4bf06165236abc845f4e7310c4e50778\\native_assets.yaml: 

@@ -1,0 +1,1 @@
+ C:\\Users\\M\\Music\\ecommerce_penjualan_bakso\\.dart_tool\\flutter_build\\96b1116e52f0777e06252ade078cb342\\native_assets.yaml: 
