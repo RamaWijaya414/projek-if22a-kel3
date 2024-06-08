@@ -4,7 +4,7 @@
             "outputFile": "com.example.project_if22a.app-mergeDebugResources-20:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "D:\\projek-if22a-kel3\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "D:\\ecommerce_penjualan_bakso\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

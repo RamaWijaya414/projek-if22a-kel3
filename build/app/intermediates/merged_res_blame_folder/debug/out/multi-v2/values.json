@@ -110,24 +110,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\M\\.gradle\\caches\\transforms-3\\16b43ec4d4d703c704cd90c51d5d42eb\\transformed\\lifecycle-viewmodel-2.6.1\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "49",
-                        "endOffsets": "100"
-                    },
-                    "to": {
-                        "startLines": "97",
-                        "startColumns": "4",
-                        "startOffsets": "5651",
-                        "endColumns": "49",
-                        "endOffsets": "5696"
-                    }
-                },
-                {
-                    "source": "D:\\projek-if22a-kel3\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\ecommerce_penjualan_bakso\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -143,6 +126,23 @@
                         "endLines": "111,114",
                         "endColumns": "12,12",
                         "endOffsets": "6612,6781"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\M\\.gradle\\caches\\transforms-3\\16b43ec4d4d703c704cd90c51d5d42eb\\transformed\\lifecycle-viewmodel-2.6.1\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "49",
+                        "endOffsets": "100"
+                    },
+                    "to": {
+                        "startLines": "97",
+                        "startColumns": "4",
+                        "startOffsets": "5651",
+                        "endColumns": "49",
+                        "endOffsets": "5696"
                     }
                 }
             ]
