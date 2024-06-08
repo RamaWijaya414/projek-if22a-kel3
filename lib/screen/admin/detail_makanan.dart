@@ -1,0 +1,98 @@
+import 'package:flutter/material.dart';
+import 'edit_makanan.dart';
+import '../../model/food.dart';
+
+class DetailMakanan extends StatefulWidget {
+  final Food food;
+  final Function(Food) onUpdate;
+
+  DetailMakanan({required this.food, required this.onUpdate});
+
+  @override
+  _DetailMakananState createState() => _DetailMakananState();
+}
+
+class _DetailMakananState extends State<DetailMakanan> {
+  late Food food;
+
+  @override
+  void initState() {
+    super.initState();
+    food = widget.food;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(food.title),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => EditMakanan(
+                    food: food,
+                    onSave: (updatedFood) {
+                      widget.onUpdate(updatedFood);
+                    },
+                    onUpdate: (updatedFood) {
+                      // Tambahkan onUpdate di sini untuk memperbarui food di DetailMakanan
+                      setState(() {
+                        food = updatedFood;
+                      });
+                    },
+                  ),
+                ),
+              ).then((value) {
+                setState(() {});
+              });
+            },
+          ),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(
+                food.imageUrl,
+                width: double.infinity,
+                height: 200,
+                fit: BoxFit.cover,
+              ),
+            ),
+            SizedBox(height: 16),
+            Text(
+              food.title,
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 8),
+            Text(
+              'Rp ${food.price.toString()}',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.grey[700],
+              ),
+            ),
+            SizedBox(height: 8),
+            Text(
+              food.description,
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
