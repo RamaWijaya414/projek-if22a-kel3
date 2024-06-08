@@ -49,11 +49,14 @@ class _ListMakananState extends State<ListMakanan> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Daftar Makanan',
-          style: TextStyle(
-              color: Colors.white), // Atur warna teks judul menjadi putih
+          "Menu Makanan",
+          style: TextStyle(color: Colors.white), // Set the text color to white
         ),
-        backgroundColor: Colors.blue, // Atur warna latar belakang biru
+        backgroundColor: Color.fromARGB(255, 22, 121, 171),
+        iconTheme: IconThemeData(
+          color: Colors.white, // Set the back button icon color to white
+        ),
+        leadingWidth: 30,
       ),
       body: ListView.builder(
         itemCount: foods.length,
@@ -88,6 +91,3 @@ class _ListMakananState extends State<ListMakanan> {
     );
   }
 }
-
-
-

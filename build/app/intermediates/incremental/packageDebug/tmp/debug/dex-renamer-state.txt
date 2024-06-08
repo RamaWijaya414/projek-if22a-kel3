@@ -1,4 +1,4 @@
-#Fri Jun 07 21:46:31 WIB 2024
-base.0=D\:\\ecommerce_penjualan_bakso\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Sat Jun 08 13:57:46 WIB 2024
+base.0=D\:\\projek-if22a-kel3\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
