@@ -1,4 +1,4 @@
-#Tue Jun 04 12:57:45 WIB 2024
-base.0=D\:\\projek-if22a-kel3\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
+#Fri Jun 07 08:33:32 ICT 2024
+base.0=D\:\\Semester 4\\projek\\projek-if22a-kel3\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
+path.0=classes.dex

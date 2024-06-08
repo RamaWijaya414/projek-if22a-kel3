@@ -9,6 +9,51 @@ class ListPromo extends StatefulWidget {
 }
 
 class _ListPromoState extends State<ListPromo> {
+  final List<Map<String, String>> promos = [
+    {
+      'image': 'asset/images/mieAyamBakso.jpeg',
+      'name': 'Mie Ayam + Bakso',
+      'price': '17000',
+      'discount': '15',
+    },
+    {
+      'image': 'asset/images/baksoTelor.jpeg',
+      'name': 'Bakso Telor',
+      'price': '13000',
+      'discount': '15',
+    },
+    {
+      'image': 'asset/images/mieAyam.jpg',
+      'name': 'Mie Ayam',
+      'price': '10000',
+      'discount': '5',
+    },
+    {
+      'image': 'asset/images/baksoUrat.jpg',
+      'name': 'Bakso Urat',
+      'price': '15000',
+      'discount': '10',
+    },
+    {
+      'image': 'asset/images/baksoKerikil.jpg',
+      'name': 'Bakso Kerikil',
+      'price': '15000',
+      'discount': '10',
+    },
+    {
+      'image': 'asset/images/baksoMercon.jpeg',
+      'name': 'Bakso Mercon',
+      'price': '18000',
+      'discount': '10',
+    },
+  ];
+
+  int calculateDiscountedPrice(String price, String discount) {
+    int originalPrice = int.parse(price);
+    double discountPercentage = double.parse(discount) / 100;
+    return (originalPrice - (originalPrice * discountPercentage)).round();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,22 +68,79 @@ class _ListPromoState extends State<ListPromo> {
         ),
         leadingWidth: 30,
       ),
-      body: Stack(
-        children: [
-          Positioned(
-            bottom: 16,
-            right: 16,
-            child: FloatingActionButton(
-              onPressed: () {},
-              child: Icon(
-                Icons.add,
-                color: Colors.white, // Set the plus icon color to white
+      body: ListView.builder(
+        itemCount: promos.length,
+        itemBuilder: (context, index) {
+          int originalPrice = int.parse(promos[index]['price']!);
+          int discountedPrice = calculateDiscountedPrice(promos[index]['price']!, promos[index]['discount']!);
+
+          return Card(
+            margin: EdgeInsets.all(10),
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  Image.asset(
+                    promos[index]['image']!,
+                    height: 80,
+                    width: 80,
+                    fit: BoxFit.cover,
+                  ),
+                  SizedBox(width: 10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        promos[index]['name']!,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'Diskon: ${promos[index]['discount']}%',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.red,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Rp. $originalPrice',
+                            style: TextStyle(
+                              fontSize: 14,
+                              decoration: TextDecoration.lineThrough,
+                              color: Colors.red,
+                            ),
+                          ),
+                          SizedBox(width: 5),
+                          Text(
+                            'Rp. $discountedPrice',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.green,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              backgroundColor: Asset.colorPrimary,
             ),
-          )
-        ],
+          );
+        },
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   child: Icon(
+      //     Icons.add,
+      //     color: Colors.white, // Set the plus icon color to white
+      //   ),
+      //   backgroundColor: Asset.colorPrimary,
+      // ),
     );
   }
 }
