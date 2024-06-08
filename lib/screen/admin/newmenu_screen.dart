@@ -1,8 +1,6 @@
-import 'package:ecommerce_penjualan_bakso/screen/admin/dashboard_admin.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
-import 'home_screen.dart'; // Import file home_screen.dart
 
 class AddMenuPage extends StatefulWidget {
   const AddMenuPage({Key? key}) : super(key: key);
@@ -44,10 +42,10 @@ class _AddMenuPageState extends State<AddMenuPage> {
       );
 
       // Navigasi ke home_screen.dart setelah menambahkan menu
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => DashboardAdmin()),
-      );
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => DashboardAdmin()),
+      // );
     }
   }
 
@@ -63,52 +61,77 @@ class _AddMenuPageState extends State<AddMenuPage> {
               if (_imagePath != null) Image.file(File(_imagePath!)),
               TextFormField(
                 controller: _nameController,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: 'Nama Makanan',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  hintText: 'Masukkan Nama Makanan',
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter the name of the food';
+                    return 'Silakan masukkan nama makanan';
                   }
                   return null;
                 },
               ),
+              SizedBox(height: 10),
               TextFormField(
                 controller: _descriptionController,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: 'Deskripsi',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  hintText: 'Masukkan Deskripsi',
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter a description';
+                    return 'Silakan masukkan deskripsi';
                   }
                   return null;
                 },
               ),
+              SizedBox(height: 10),
               TextFormField(
                 controller: _priceController,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: 'Harga',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  hintText: 'Masukkan Harga',
                 ),
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter the price';
+                    return 'Silakan masukkan harga';
                   }
                   if (double.tryParse(value) == null) {
-                    return 'Please enter a valid number';
+                    return 'Silakan masukkan angka yang valid';
                   }
                   return null;
                 },
               ),
-              const SizedBox(height: 20),
-              ElevatedButton(
+              SizedBox(height: 20),
+              ElevatedButton.icon(
                 onPressed: _getImage,
-                child: const Text('Upload Gambar'),
+                icon: Icon(Icons.upload),
+                label: Text('Upload Gambar'),
+                style: ElevatedButton.styleFrom(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 16), // Ubah tinggi tombol
+                ),
               ),
-              ElevatedButton(
+              SizedBox(height: 20),
+              ElevatedButton.icon(
                 onPressed: _submitForm,
-                child: const Text('Add Menu'),
+                icon: Icon(Icons.add),
+                label: Text('Tambah Menu'),
+                style: ElevatedButton.styleFrom(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 16), // Ubah tinggi tombol
+                ),
               ),
             ],
           ),

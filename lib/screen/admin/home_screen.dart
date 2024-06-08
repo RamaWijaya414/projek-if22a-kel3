@@ -20,6 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -39,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: TextField(
                   controller: _searchController,
                   decoration: InputDecoration(
-                    hintText: 'Search...',
+                    hintText: 'Makan apa ya hari ini ?',
                     border: InputBorder.none,
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
@@ -64,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: 160,
+              height: screenHeight * 0.25, // 25% of screen height
               child: ListView(
                 children: [
                   CarouselSlider(
@@ -73,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       BeritaTerkini('asset/images/2.png', '', ''),
                     ],
                     options: CarouselOptions(
-                      height: 160,
+                      height: screenHeight * 0.25,
                       enlargeCenterPage: true,
                       autoPlay: true,
                       aspectRatio: 16 / 9,
@@ -108,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 5,
                 ),
-                Text(" Daftar Menu",
+                Text(" Semua Menu",
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 SizedBox(
@@ -130,9 +133,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Image.asset(
                               'asset/images/mieAyamBakso.jpeg',
-                              height: 100,
-                              width: 175,
-                              fit: BoxFit.cover,
+                              height:
+                                  screenHeight * 0.15, // 15% of screen height
+                              width: double
+                                  .infinity, // Make the image take full width of the container
+                              fit: BoxFit
+                                  .cover, // Make the image cover the container
                             ),
                             SizedBox(
                               height: 2.0,
@@ -172,8 +178,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Image.asset(
                               'asset/images/baksoTelor.jpeg',
-                              height: 100,
-                              width: 175,
+                              height: screenHeight * 0.15,
+                              width: double.infinity,
                               fit: BoxFit.cover,
                             ),
                             SizedBox(
@@ -218,8 +224,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Image.asset(
                               'asset/images/mieAyam.jpg',
-                              height: 100,
-                              width: 175,
+                              height: screenHeight * 0.15,
+                              width: double.infinity,
                               fit: BoxFit.cover,
                             ),
                             SizedBox(
@@ -260,8 +266,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Image.asset(
                               'asset/images/baksoUrat.jpg',
-                              height: 100,
-                              width: 175,
+                              height: screenHeight * 0.15,
+                              width: double.infinity,
                               fit: BoxFit.cover,
                             ),
                             SizedBox(
@@ -305,9 +311,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Image.asset(
-                              'asset/images/baksoKerikil.jpg',
-                              height: 100,
-                              width: 175,
+                              'asset/images/baksoUrat.jpg',
+                              height: screenHeight * 0.15,
+                              width: double.infinity,
                               fit: BoxFit.cover,
                             ),
                             SizedBox(
@@ -348,8 +354,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Image.asset(
                               'asset/images/baksoMercon.jpeg',
-                              height: 100,
-                              width: 172,
+                              height: screenHeight * 0.15,
+                              width: double.infinity,
                               fit: BoxFit.cover,
                             ),
                             SizedBox(
@@ -395,7 +401,7 @@ class IconButton extends StatelessWidget {
     {'title': 'Makanan', 'view': ListMakanan()},
     {'title': 'Minuman', 'view': ListMinuman()},
     {'title': 'Promo', 'view': ListPromo()},
-    {'title': 'Promo', 'view': ListVoucher()},
+    {'title': 'Voucher', 'view': ListVoucher()},
   ];
 
   @override
@@ -459,9 +465,11 @@ class BeritaTerkini extends StatelessWidget {
   BeritaTerkini(this.img, this.judul, this.tanggal);
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
       padding: EdgeInsets.all(10),
-      height: MediaQuery.of(context).size.height,
+      height: screenHeight * 0.25, // Adjust this as necessary
       child: Stack(
         children: [
           Positioned.fill(

@@ -34,10 +34,12 @@ class _AccountScreenState extends State<AccountScreen> {
             'Mukhlis Khoirudin',
             style: TextStyle(fontSize: 20),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 2),
           Text(
-            'mukliskh123@gmail.com',
-            style: TextStyle(fontSize: 16),
+            'Buka',
+            style: TextStyle(
+                fontSize: 16,
+                color: Colors.green), // Mengubah warna menjadi hijau
           ),
           SizedBox(height: 20),
           ElevatedButton(

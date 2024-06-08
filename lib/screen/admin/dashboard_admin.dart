@@ -61,7 +61,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
               icon: Icon(Icons.home),
             ),
             BottomNavigationBarItem(
-              label: "Notifikasi",
+              label: "Notification",
               icon: Icon(Icons.notifications),
             ),
             BottomNavigationBarItem(
@@ -69,7 +69,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
               icon: Icon(Icons.add_shopping_cart),
             ),
             BottomNavigationBarItem(
-              label: "Akun",
+              label: "Account",
               icon: Icon(Icons.account_circle),
             ),
           ],
@@ -84,16 +84,16 @@ class _DashboardAdminState extends State<DashboardAdmin> {
       _selectedIndex = index;
       switch (index) {
         case 0:
-          _title = 'Home';
+          _title = 'Beranda';
           break;
         case 1:
           _title = 'Notifikasi';
           break;
         case 2:
-          _title = 'Add';
+          _title = 'Tambah Menu';
           break;
         case 3:
-          _title = 'Account';
+          _title = 'Profil';
           break;
       }
     });

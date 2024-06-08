@@ -4,7 +4,7 @@ import 'package:ecommerce_penjualan_bakso/config/asset.dart';
 import 'package:ecommerce_penjualan_bakso/screen/admin/dashboard_admin.dart';
 
 class Login extends StatefulWidget {
-  const Login({super.key});
+  const Login({Key? key}) : super(key: key);
 
   @override
   State<Login> createState() => _LoginState();
@@ -22,7 +22,6 @@ class _LoginState extends State<Login> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
-          // Menggunakan Stack untuk menempatkan lingkaran di atas tombol login
           children: [
             Container(
               height: 760,
@@ -43,8 +42,7 @@ class _LoginState extends State<Login> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                        image: AssetImage(
-                            'asset/images/Bakso.png'), // Ganti dengan path gambar Anda
+                        image: AssetImage('asset/images/Bakso.png'),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -61,7 +59,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Form(
                     key: _formKey,
@@ -77,44 +75,48 @@ class _LoginState extends State<Login> {
                               color: Asset.colorPrimaryDark,
                             ),
                             decoration: InputDecoration(
-                                hintText: '  Username',
-                                hintStyle: TextStyle(
+                              hintText: 'Username',
+                              hintStyle: TextStyle(
+                                color: Asset.colorPrimaryDark,
+                              ),
+                              filled: true,
+                              contentPadding: EdgeInsets.symmetric(
+                                vertical: 15,
+                                horizontal: 20,
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide: BorderSide(
+                                  color: Asset.colorPrimaryDark,
+                                  width: 1,
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide: BorderSide(
+                                  color: Asset.colorPrimary,
+                                  width: 2,
+                                ),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide: BorderSide(
+                                  color: Asset.colorPrimary,
+                                  width: 1,
+                                ),
+                              ),
+                              prefixIcon: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 20.0, right: 10.0),
+                                child: Icon(
+                                  Icons.people,
                                   color: Asset.colorPrimaryDark,
                                 ),
-                                filled: true,
-                                contentPadding: EdgeInsets.symmetric(
-                                    vertical: 15, horizontal: 20),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(
-                                    color: Asset.colorPrimaryDark,
-                                    width: 1,
-                                  ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(
-                                    color: Asset.colorPrimary,
-                                    width: 2,
-                                  ),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(
-                                    color: Asset.colorPrimary,
-                                    width: 1,
-                                  ),
-                                ),
-                                prefixIcon: Padding(
-                                  padding: const EdgeInsets.only(left: 20.0),
-                                  child: Icon(
-                                    Icons.people,
-                                    color: Asset.colorPrimaryDark,
-                                  ),
-                                )),
+                              ),
+                            ),
                           ),
                           SizedBox(
-                            height: 20,
+                            height: 15, // Dikurangi sedikit
                           ),
                           TextFormField(
                             validator: (value) =>
@@ -125,44 +127,48 @@ class _LoginState extends State<Login> {
                             ),
                             obscureText: true,
                             decoration: InputDecoration(
-                                hintText: '  Password',
-                                hintStyle: TextStyle(
+                              hintText: 'Password',
+                              hintStyle: TextStyle(
+                                color: Asset.colorPrimaryDark,
+                              ),
+                              filled: true,
+                              contentPadding: EdgeInsets.symmetric(
+                                vertical: 15,
+                                horizontal: 20,
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide: BorderSide(
+                                  color: Asset.colorPrimaryDark,
+                                  width: 1,
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide: BorderSide(
+                                  color: Asset.colorPrimary,
+                                  width: 2,
+                                ),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                borderSide: BorderSide(
+                                  color: Asset.colorPrimary,
+                                  width: 1,
+                                ),
+                              ),
+                              prefixIcon: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 20.0, right: 10.0),
+                                child: Icon(
+                                  Icons.vpn_key,
                                   color: Asset.colorPrimaryDark,
                                 ),
-                                filled: true,
-                                contentPadding: EdgeInsets.symmetric(
-                                    vertical: 15, horizontal: 20),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(
-                                    color: Asset.colorPrimaryDark,
-                                    width: 1,
-                                  ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(
-                                    color: Asset.colorPrimary,
-                                    width: 2,
-                                  ),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(
-                                    color: Asset.colorPrimary,
-                                    width: 1,
-                                  ),
-                                ),
-                                prefixIcon: Padding(
-                                  padding: const EdgeInsets.only(left: 20.0),
-                                  child: Icon(
-                                    Icons.vpn_key,
-                                    color: Asset.colorPrimaryDark,
-                                  ),
-                                )),
+                              ),
+                            ),
                           ),
                           SizedBox(
-                            height: 25,
+                            height: 20, // Diperpanjang sedikit
                           ),
                           Container(
                             decoration: BoxDecoration(
