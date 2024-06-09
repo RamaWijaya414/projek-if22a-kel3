@@ -11,14 +11,50 @@ class _ListMakananState extends State<ListMakanan> {
   List<Food> foods = [
     Food(
       imageUrl: 'asset/images/baksoUrat.jpg',
-      title: 'Makanan 1',
-      description: 'Deskripsi Makanan 1',
-      price: 10000,
+      title: 'Bakso',
+      description:
+          'Nikmati kelezatan Bakso Spesial kami yang terbuat dari daging sapi pilihan dengan bumbu rahasia, menciptakan tekstur kenyal yang sempurna dan rasa yang kaya. Dalam setiap mangkuk, Anda akan menemukan kombinasi bakso urat, bakso telur, bakso keju, dan bakso ikan, disajikan dengan kuah kaldu sapi yang gurih, mie atau bihun lembut, serta sayuran segar.  Ayo, rasakan sensasi cita rasa yang menggugah selera bersama keluarga dan teman-teman Anda!',
+      price: 15000,
     ),
     Food(
       imageUrl: 'asset/images/baksoTelor.jpeg',
+      title: 'Bakso Telor',
+      description:
+          'Bakso dengan isian telor bulat dengan kuah kaldi sapi pilihan',
+      price: 18000,
+    ),
+    Food(
+      imageUrl: 'asset/images/baksoKerikil.jpg',
+      title: 'Bakso Kerikil',
+      description:
+          'Bakso original dengan ukuran mini yang imut dengan kuah kaldu ayam yang spesial',
+      price: 15000,
+    ),
+    Food(
+      imageUrl: 'asset/images/baksoMercon.jpeg',
+      title: 'Bakso Mercon',
+      description:
+          'Bakso yang berisi ulekan cabai dan beberapa irisan cabai merah pilihan dengan kuah kaldu sapi yang gurih',
+      price: 20000,
+    ),
+    Food(
+      imageUrl: 'asset/images/mieAyam.jpg',
+      title: 'Mie Ayam',
+      description: 'Mie ayam dengan racikan bumbu khas toko kami',
+      price: 20000,
+    ),
+    Food(
+      imageUrl: 'asset/images/mieAyamBakso.jpeg',
+      title: 'Mie Ayam Bakso',
+      description:
+          'Mie ayam dengan racikan bumbu khas toko kami, dengan tambahan extra Bakso',
+      price: 20000,
+    ),
+    Food(
+      imageUrl: 'asset/images/mieBakso.jpg',
       title: 'Makanan 2',
-      description: 'Deskripsi Makanan 2',
+      description:
+          'Mie dengan racikan bumbu khas toko kami, dengan tambahan extra Bakso',
       price: 20000,
     ),
   ];
