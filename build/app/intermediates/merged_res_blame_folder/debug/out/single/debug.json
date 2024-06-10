@@ -12,10 +12,6 @@
         "source": "com.example.project_if22a.app-main-16:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.project_if22a.app-merged_res-22:/drawable_launch_background.xml.flat",
-        "source": "com.example.project_if22a.app-main-16:/drawable/launch_background.xml"
-    },
-    {
         "merged": "com.example.project_if22a.app-merged_res-22:/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "com.example.project_if22a.app-main-16:/mipmap-xhdpi/ic_launcher.png"
     },
